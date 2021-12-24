@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Staatliches&display=swap');
+
+/*
+font-family: 'PT Sans', sans-serif;
+font-family: 'Staatliches', cursive;
+*/
+
+:root{
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafo: 'Staatliches', cursive;
+
+    --primario: #784D3C;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    --gris: #E1E1E1;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: var(--fuenteParrafo);
+    font-size: 2rem;
+    line-height: 2;
+}
+
+/*Globales*/
+.contenedor{
+/*     max-width: 120rem;
+    width: 90%; */
+    width: min(90%, 125rem);
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4{
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 5rem;
+}
+
+h2{
+    font-size: 4.3rem;
+}
+
+h3{
+    font-size: 3.6rem;
+}
+
+h4{
+    font-size: 3rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+/*Utilidades*/
+.no-margin{
+    margin: 0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+.boton{
+    display: block;
+    min-width: 5rem;
+    min-height: 3rem;
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--blanco);
+    border: none;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .boton{
+        display: inline-block;
+    }
+}
+
+.boton-primario{
+    background-color: var(--negro);
+}
+
+.boton-secundario{
+    background-color: var(--primario);
+    font-weight: 400;
+}
+
+/*HTML*/
+.webp .header{
+    background-image: url(../img/banner.webp);
+}
+
+.no-webp .header{
+    background-image: url(../img/banner.jpg);
+}
+
+.header{
+    min-height: 60rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.header__texto{
+    color: var(--blanco);
+    margin-top: 5rem;
+}
+
+.barra{
+    padding-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .barra{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__texto{
+        margin-top: 15rem;
+    }
+}
+
+.logo{
+    color: var(--blanco);
+}
+
+.logo__nombre{
+    font-weight: 400;
+}
+
+.logo__bold{
+    font-weight: 700;
+}
+
+.navegacion__enlace{
+    display: block;
+    color: var(--blanco);
+    text-align: center;
+}
+
+.navegacion__enlace:hover{
+    color: var(--primario);
+    background-color: lightgoldenrodyellow;
+}
+
+@media (min-width: 768px) {
+    .navegacion{
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .contenido-principal{
+        display:grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 5rem;
+    }
+}
+
+.entrada{
+    border-bottom: 3px var(--gris) solid;
+    margin: 2rem 0;
+    padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .entrada:last-of-type{
+        border: none;
+    }
+}
+
+.cursos{
+    list-style: none;
+}
+
+.widget-curso,
+.curso{
+    border-bottom: 3px dashed var(--gris);
+    margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type,
+.curso:last-of-type{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.widget-curso__label,
+.curso__label{
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+
+.widget-curso__informacion,
+.curso__informacion{
+    font-weight: 400;
+}
+
+.footer{
+    background-color: var(--negro);
+    margin: 2rem 0 0 0;
+    padding: 1rem 0 3rem 0;
+}
+
+.sobre-nostros__parrafo:first-of-type{
+    margin-top: 0;
+}
+
+.sobre-nostros__parrafo:last-of-type{
+    margin-bottom: 0;
+}
+
+@media (min-width: 1100px) {
+    .sobre-nosotros__contenido{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+
+.curso{
+    padding: 3rem 0;
+    border-bottom: 3px dashed var(--gris);
+}
+
+@media (min-width: 768px) {
+    .curso{
+        display: flex;
+        gap: 3rem;
+    }
+
+/*     .curso__imagen,
+    .curso__informacion{
+        flex-basis: 50%;
+    } */ /*Si quisiera un flex de 50 / 50 esta seria una solucion, lo ideal es hacerlo con grid pero queria practicar flex xd*/
+
+    .curso__imagen{
+        flex: 1;
+    }
+    .curso__informacion{
+        flex: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-logos{
+        margin-top: 2rem;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+}
+
+.contenedor-entrada{
+    border-bottom: 3px dashed var(--gris);
+}
+
+.contenedor-entrada:last-of-type{
+    border-bottom: none;
+}
+
+@media (min-width: 768px) {
+    .contenedor-entrada{
+        padding: 3rem;
+        margin: 2rem 0;
+    }
+}
+
+/*Contacto*/
+.contacto-bg{
+    background-image: url(../img/contacto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40rem;
+}
+
+.formulario{
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    padding: 3rem;;
+    width: 90%;
+    border: 2px solid var(--negro);
+}
+
+/* .campo{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 2rem;
+    margin: 1rem;
+} */
+
+.campo{
+    display: flex;
+    margin: 2rem 0;
+    gap: 2rem;
+}
+
+.campo:last-of-type{
+    margin-bottom: 0;
+}
+
+.campo__label{
+    flex: 0 0 9rem;
+}
+
+.campo__input{
+    flex: 1;
+}
+
+.campo__text-area{
+    flex: 1;
+}
+
+.campo__boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
