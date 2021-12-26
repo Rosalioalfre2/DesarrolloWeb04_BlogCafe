@@ -309,7 +309,7 @@ img{
 .formulario{
     background-color: var(--blanco);
     margin: -5rem auto 0 auto;
-    padding: 3rem;;
+    padding: 3rem;
     width: 90%;
     border: 2px solid var(--negro);
 }
@@ -325,6 +325,7 @@ img{
     display: flex;
     margin: 2rem 0;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .campo:last-of-type{
@@ -341,6 +342,17 @@ img{
 
 .campo__text-area{
     flex: 1;
+}
+
+@media (max-width: 500px) {
+    .campo__input,
+    .campo__text-area{
+        min-width: 90%;
+    }
+
+    .campo__boton{
+    min-width: 50%;
+    }
 }
 
 .campo__boton{
