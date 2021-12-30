@@ -67,6 +67,20 @@ img{
     max-width: 100%;
 }
 
+
+/*Mensaje de error*/
+.mensaje-error{
+    background-color: rgba(185, 0, 0, 0.8);
+    color: var(--blanco);
+    text-align: center;
+}
+
+.mensaje-correcto{
+    background-color: rgba(0, 185, 0, 0.8);
+    color: var(--blanco);
+    text-align: center;
+}
+
 /*Utilidades*/
 .no-margin{
     margin: 0;
