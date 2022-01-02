@@ -41,9 +41,6 @@ enlaceAReady.textContent = 'Enlace a Ready de Canserbero';
 const navegacion = document.querySelector('.navegacion');
 navegacion.appendChild(enlaceAReady);
 
-
-
-
 //Eventos
 
 /*
