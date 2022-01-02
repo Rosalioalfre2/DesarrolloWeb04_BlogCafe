@@ -82,11 +82,11 @@ function validarFormulario(evento){
     const {campo__nombre, campo__email, campo__mensaje} = datos;
 
     if(campo__nombre === '' || campo__email === '' || campo__mensaje === '' ){
-        mensajeError("Todos los campos son obligatorios");
+        mostrarAlerta("Todos los campos son obligatorios", error = true);
         return;
     }
 
-    mensajeCorrecto("Formulario valido")
+    mostrarAlerta("Formulario valido")
 }
 
 function leerTexto(e){
@@ -94,6 +94,7 @@ function leerTexto(e){
     console.log(datos)
 }
 
+/*
 function mensajeError(mensaje){
     const mensajeError = document.createElement("P");
     mensajeError.textContent = mensaje;
@@ -116,4 +117,24 @@ function mensajeCorrecto(mensaje){
     setTimeout(() => {
         mensajeCorrecto.remove();
     }, 5000);
+}
+*/
+
+//Refactorizamos el codigo de arriba para hacerlo mas simple y corto
+function mostrarAlerta(mensaje, error = null){
+    const mensajeAMostar = document.createElement('P');
+    mensajeAMostar.textContent = mensaje;
+    
+    if(error === null){
+        mensajeAMostar.classList.add('mensaje-correcto');
+    }
+    else{
+        mensajeAMostar.classList.add('mensaje-error');
+    }
+
+    formulario.appendChild(mensajeAMostar);
+
+    setTimeout(()=>{
+        mensajeAMostar.remove();
+    },5000);
 }
